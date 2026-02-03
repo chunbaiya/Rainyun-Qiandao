@@ -11,14 +11,15 @@
 
 ## 相关致谢
 
-本项目的交互式验证码识别(Interactive CAPTCHA Recognition)模块来自项目[RainyunCheckIn@FalseHappiness](https://github.com/FalseHappiness/RainyunCheckIn)。这个项目采用更加强大的黑魔法，允许直接创建完整验证请求，但考虑到浏览器模拟仍然是更加稳定的方法，且维护所需的技术成本和时间成本显著低于逆向工程，故做更新以整合资源、取长补短，在此感谢原作者提供的相关思路和方法。
+本项目的交互式验证码识别（Interactive CAPTCHA Recognition）模块来自项目[RainyunCheckIn@FalseHappiness](https://github.com/FalseHappiness/RainyunCheckIn)。这个项目采用更加强大的黑魔法，允许直接创建完整验证请求，但考虑到浏览器模拟仍然是更加稳定的方法，且维护所需的技术成本和时间成本显著低于逆向工程，故做更新以整合资源、取长补短，在此感谢原作者提供的相关思路和方法。
 
 我也注意到此项目已经有维护者做出了二改、三改版本，本项目的目标仅为满足最简化需求，故不做细化，如果你有相关需求，欢迎使用来自其他维护者的分支版本：
 
-| 版本 | 作者 | 仓库 | 说明 |
-|------|------|------|------|
-| 二改 | fatekey | https://github.com/fatekey/Rainyun-Qiandao | Docker 化改造 |
-| 三改 | Jielumoon | https://github.com/Jielumoon/Rainyun-Qiandao | Web面板+多通知渠道+稳定性优化+自动续费 |
+| 作者 | 仓库 | 特性 |
+|------|------|------|
+| LeapYa | https://github.com/LeapYa/Rainyun-Qiandao | Docker部署+账号独立配置代理 |
+| fatekey | https://github.com/fatekey/Rainyun-Qiandao | Docker部署 |
+| Jielumoon | https://github.com/Jielumoon/Rainyun-Qiandao | Docker部署+Web面板+多通知渠道+稳定性优化+自动续费 |
 
 ## 食用方法
 1. 安装[Python](https://www.python.org/downloads/)作为运行环境
