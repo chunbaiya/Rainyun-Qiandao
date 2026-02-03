@@ -21,6 +21,12 @@
 | fatekey | https://github.com/fatekey/Rainyun-Qiandao | Docker部署 |
 | Jielumoon | https://github.com/Jielumoon/Rainyun-Qiandao | Docker部署+Web面板+多通知渠道+稳定性优化+自动续费 |
 
+## 免责声明
+
+本项目仅供技术交流与学习参考，请严格遵守相关法律法规，切勿将其用于任何商业或非法用途。
+
+将本项目分享到任何**雨云官方相关讨论社区/群组**是极其不明智的行为，请不要这么做！
+
 ## 食用方法
 1. 安装[Python](https://www.python.org/downloads/)作为运行环境
 2. 配置好本地Selenium环境，**一般情况下你不应该使用跟随此项目上传的chromedriver**，你可以参照[这个视频](https://www.bilibili.com/video/BV1Y9UPYAEqN?p=2)
