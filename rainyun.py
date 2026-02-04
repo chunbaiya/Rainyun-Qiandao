@@ -81,7 +81,7 @@ def process_captcha():
         result = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="tcOperation"]')))
         if result.get_attribute("class") == 'tc-opera pointer show-success':
             logger.info("验证码通过")
-            # return
+            return
         else:
             logger.error("验证码未通过，正在重试")
         reload = driver.find_element(By.XPATH, '//*[@id="reload"]')
