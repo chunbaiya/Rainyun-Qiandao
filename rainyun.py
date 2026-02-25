@@ -6,8 +6,8 @@
 import os
 import sys
 
-# --------- 核心环境隔离修复 (解决 Numpy/OpenCV 版本冲突) ---------
-# 强制让脚本使用安装了 OpenCV 的底层系统 Python 运行，而不是青龙的虚拟 Python
+# --------- 核心环境隔离修复---------
+# 强制让脚本使用安装了 OpenCV 的底层系统 Python 运行
 if sys.executable != '/usr/bin/python3' and os.path.exists('/usr/bin/python3'):
     os.execl('/usr/bin/python3', '/usr/bin/python3', *sys.argv)
 
@@ -222,7 +222,8 @@ def run_sign_in(username, password):
 if __name__ == "__main__":
     ver = "2.3 雨云签到工具青龙版"
     logger.info("=" * 60)
-    logger.info(f"🌧️ 雨云签到工具 v{ver} ~")
+    logger.info(f"雨云签到工具 v{ver} by SerendipityR ~")
+    logger.info("Github发布页: https://github.com/SerendipityR-2022/Rainyun-Qiandao")
     logger.info("-------------当前版本为二开版本，原作者信息在上面-------------")
     logger.info("二开作者Q:16745603          交流讨论群:851107003")
     logger.info("本项目仅作为学习参考，请勿用于其他用途!")
@@ -259,3 +260,4 @@ if __name__ == "__main__":
     logger.info("=" * 60)
     logger.info("🎉 所有账号处理流程结束！")
     send_notification("雨云签到执行结果", "\n".join(notify_msg))
+
