@@ -6,7 +6,7 @@
 import os
 import sys
 
-# --------- 核心环境隔离修复---------
+# --------- 核心环境隔离修复 (解决 Numpy/OpenCV 版本冲突) ---------
 # 强制让脚本使用安装了 OpenCV 的底层系统 Python 运行
 if sys.executable != '/usr/bin/python3' and os.path.exists('/usr/bin/python3'):
     os.execl('/usr/bin/python3', '/usr/bin/python3', *sys.argv)
@@ -199,8 +199,10 @@ def run_sign_in(username, password):
             points_raw = driver.find_element(By.XPATH, '//*[@id="app"]/div[1]/div[3]/div[2]/div/div/div[2]/div[1]/div[1]/div/p/div/h3').get_attribute("textContent")
             current_points = int(''.join(re.findall(r'\d+', points_raw)))
             
-            logger.info(f"🎉 任务执行成功！当前剩余积分: {current_points}")
-            status_msg = f"账号 {username}: 签到成功 ✅ (当前积分:{current_points})"
+            # --- 补回积分转人民币换算逻辑 ---
+            money = current_points / 2000
+            logger.info(f"🎉 任务执行成功！当前剩余积分: {current_points} | 约合: {money:.2f} 元")
+            status_msg = f"账号 {username}: 签到成功 ✅ (当前积分:{current_points} | 约合:{money:.2f}元)"
         else:
             logger.error("❌ 登录失败，请检查账号密码。")
             status_msg = f"账号 {username}: 登录失败 ❌ (检查密码)"
@@ -222,7 +224,7 @@ def run_sign_in(username, password):
 if __name__ == "__main__":
     ver = "2.3 雨云签到工具青龙版"
     logger.info("=" * 60)
-    logger.info(f"雨云签到工具 v{ver} by SerendipityR ~")
+    logger.info(f"🌧️ 雨云签到工具 v{ver} ~")
     logger.info("Github发布页: https://github.com/SerendipityR-2022/Rainyun-Qiandao")
     logger.info("-------------当前版本为二开版本，原作者信息在上面-------------")
     logger.info("二开作者Q:16745603          交流讨论群:851107003")
@@ -260,4 +262,3 @@ if __name__ == "__main__":
     logger.info("=" * 60)
     logger.info("🎉 所有账号处理流程结束！")
     send_notification("雨云签到执行结果", "\n".join(notify_msg))
-
