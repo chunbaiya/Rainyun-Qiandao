@@ -24,12 +24,12 @@
 1. 进入 **青龙面板 → 订阅管理 → 新建订阅**  
 2. 填写配置：  
    | 字段 | 值 |
-   |------|-----|
-   | **名称** | `雨云签到` |
-   | **类型** | `公开仓库` |
-   | **链接** | `https://github.com/chunbaiya/Rainyun-Qiandao.git` |
-   | **定时规则** | `0 0 * * *`（每日0点自动检测更新） |
-   | **白名单配置** | `rainyun\.py|rainyun_install\.py|ICR\.py|stealth\.min\.js` |
+|------|-----|
+| **名称** | `雨云签到` |
+| **类型** | `公开仓库` |
+| **链接** | `https://github.com/chunbaiya/Rainyun-Qiandao.git` |
+| **定时规则** | `0 0 * * *`（每日0点自动检测更新） |
+| **白名单配置** | `rainyun\\.py\\|rainyun_install\\.py\\|ICR\\.py\\|stealth\\.min\\.js` |
 
 > 💡 **关键提示**：白名单必须包含 `\.`（正则转义），否则无法识别文件！
 
