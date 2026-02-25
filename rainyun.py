@@ -3,18 +3,22 @@
 # new Env('🌧️ 雨云全自动签到');
 # cron: 30 8 * * *
 
-import logging
 import os
-import random
-import re
-import time
 import sys
 
-# --------- 青龙环境路径修复 ---------
-sys.path.extend(['/usr/lib/python3.12/site-packages', '/usr/local/lib/python3.11/site-packages'])
+# --------- 核心环境隔离修复 (解决 Numpy/OpenCV 版本冲突) ---------
+# 强制让脚本使用安装了 OpenCV 的底层系统 Python 运行，而不是青龙的虚拟 Python
+if sys.executable != '/usr/bin/python3' and os.path.exists('/usr/bin/python3'):
+    os.execl('/usr/bin/python3', '/usr/bin/python3', *sys.argv)
+
+# 加入项目根目录，确保能找到通知文件和依赖
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+import logging
+import random
+import re
+import time
 import cv2
 import requests
 from selenium import webdriver
@@ -206,7 +210,10 @@ def run_sign_in(username, password):
         status_msg = f"账号 {username}: 运行时异常 ❌"
     finally:
         # 无论成功失败，确保彻底关闭浏览器，防止内存泄漏
-        driver.quit()
+        try:
+            driver.quit()
+        except:
+            pass
         logger.info("浏览器驱动已释放。")
         
     return status_msg
