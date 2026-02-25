@@ -199,7 +199,7 @@ def run_sign_in(username, password):
             points_raw = driver.find_element(By.XPATH, '//*[@id="app"]/div[1]/div[3]/div[2]/div/div/div[2]/div[1]/div[1]/div/p/div/h3').get_attribute("textContent")
             current_points = int(''.join(re.findall(r'\d+', points_raw)))
             
-            # --- 补回积分转人民币换算逻辑 ---
+            # --- 积分转人民币换算逻辑 ---
             money = current_points / 2000
             logger.info(f"🎉 任务执行成功！当前剩余积分: {current_points} | 约合: {money:.2f} 元")
             status_msg = f"账号 {username}: 签到成功 ✅ (当前积分:{current_points} | 约合:{money:.2f}元)"
@@ -222,7 +222,7 @@ def run_sign_in(username, password):
 
 # --------- 主入口 ---------
 if __name__ == "__main__":
-    ver = "2.3 雨云签到工具青龙版"
+    ver = "2.3 "
     logger.info("=" * 60)
     logger.info(f"🌧️ 雨云签到工具 v{ver} ~")
     logger.info("Github发布页: https://github.com/SerendipityR-2022/Rainyun-Qiandao")
@@ -262,3 +262,4 @@ if __name__ == "__main__":
     logger.info("=" * 60)
     logger.info("🎉 所有账号处理流程结束！")
     send_notification("雨云签到执行结果", "\n".join(notify_msg))
+
