@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# new Env('Rainyun_Sign');
+# new Env('雨云自动签到');
 # cron: 30 8 * * *
 
 import os
@@ -262,4 +262,5 @@ if __name__ == "__main__":
     logger.info("=" * 60)
     logger.info("🎉 所有账号处理流程结束！")
     send_notification("雨云签到执行结果", "\n".join(notify_msg))
+
 
