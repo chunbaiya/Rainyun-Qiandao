@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# new Env('雨云签到依赖修复');
+# new Env('🛠️ 雨云签到依赖修复');
 # cron: 0 0 1 1 *
 
 import subprocess
