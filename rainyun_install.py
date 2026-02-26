@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# new Env('雨云签到依赖修复');
+# new Env('Rainyun_Install');
 # cron: 0 0 1 1 *
 
 import subprocess
@@ -34,3 +34,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
