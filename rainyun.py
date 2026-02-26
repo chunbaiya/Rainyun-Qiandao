@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# new Env('🌧️ 雨云全自动签到');
+# new Env('雨云全自动签到');
 # cron: 30 8 * * *
 
 import os
 import sys
 
-# --------- 核心环境隔离修复 (解决 Numpy/OpenCV 版本冲突) ---------
+# --------- 核心环境隔离修复---------
 # 强制让脚本使用安装了 OpenCV 的底层系统 Python 运行
 if sys.executable != '/usr/bin/python3' and os.path.exists('/usr/bin/python3'):
     os.execl('/usr/bin/python3', '/usr/bin/python3', *sys.argv)
@@ -262,4 +262,3 @@ if __name__ == "__main__":
     logger.info("=" * 60)
     logger.info("🎉 所有账号处理流程结束！")
     send_notification("雨云签到执行结果", "\n".join(notify_msg))
-
